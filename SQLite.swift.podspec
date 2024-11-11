@@ -31,10 +31,10 @@ Pod::Spec.new do |s|
   s.visionos.deployment_target = visionos_deployment_target
 
   s.subspec 'standard' do |ss|
-    ss.source_files = 'Sources/SQLite/**/*.{c,h,m,swift}'
+    ss.source_files = 'Sources/SQLiteCW/**/*.{c,h,m,swift}'
     ss.exclude_files = 'Sources/**/Cipher.swift'
     ss.library = 'sqlite3'
-    ss.resource_bundle = { 'SQLite.swift' => 'Sources/SQLite/PrivacyInfo.xcprivacy' }
+    ss.resource_bundle = { 'SQLiteCW.swift' => 'Sources/SQLiteCW/PrivacyInfo.xcprivacy' }
     
     ss.ios.deployment_target = ios_deployment_target
     ss.tvos.deployment_target = tvos_deployment_target
@@ -43,8 +43,8 @@ Pod::Spec.new do |s|
     ss.visionos.deployment_target = visionos_deployment_target
 
     ss.test_spec 'tests' do |test_spec|
-      test_spec.resources = 'Tests/SQLiteTests/Resources/*'
-      test_spec.source_files = 'Tests/SQLiteTests/*.swift'
+      test_spec.resources = 'Tests/SQLiteCWTests/Resources/*'
+      test_spec.source_files = 'Tests/SQLiteCWTests/*.swift'
       test_spec.ios.deployment_target = ios_deployment_target
       test_spec.tvos.deployment_target = tvos_deployment_target
       test_spec.osx.deployment_target = osx_deployment_target
@@ -52,9 +52,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'standalone' do |ss|
-    ss.source_files = 'Sources/SQLite/**/*.{c,h,m,swift}'
+    ss.source_files = 'Sources/SQLiteCW/**/*.{c,h,m,swift}'
     ss.exclude_files = 'Sources/**/Cipher.swift'
-    ss.resource_bundle = { 'SQLite.swift' => 'Sources/SQLite/PrivacyInfo.xcprivacy' }
+    ss.resource_bundle = { 'SQLiteCW.swift' => 'Sources/SQLiteCW/PrivacyInfo.xcprivacy' }
 
     ss.xcconfig = {
       'OTHER_SWIFT_FLAGS' => '$(inherited) -DSQLITE_SWIFT_STANDALONE',
@@ -78,8 +78,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'SQLCipher' do |ss|
-    ss.source_files = 'Sources/SQLite/**/*.{c,h,m,swift}'
-    ss.resource_bundle = { 'SQLite.swift' => 'Sources/SQLite/PrivacyInfo.xcprivacy' }
+    ss.source_files = 'Sources/SQLiteCW/**/*.{c,h,m,swift}'
+    ss.resource_bundle = { 'SQLiteCW.swift' => 'Sources/SQLiteCW/PrivacyInfo.xcprivacy' }
 
     ss.xcconfig = {
       'OTHER_SWIFT_FLAGS' => '$(inherited) -DSQLITE_SWIFT_SQLCIPHER',
@@ -94,8 +94,8 @@ Pod::Spec.new do |s|
     #ss.visionos.deployment_target = visionos_deployment_target # Not supported by SQLCipher for now
 
     ss.test_spec 'tests' do |test_spec|
-      test_spec.resources = 'Tests/SQLiteTests/Resources/*'
-      test_spec.source_files = 'Tests/SQLiteTests/*.swift'
+      test_spec.resources = 'Tests/SQLiteCWTests/Resources/*'
+      test_spec.source_files = 'Tests/SQLiteCWTests/*.swift'
       test_spec.ios.deployment_target = ios_deployment_target
       test_spec.tvos.deployment_target = tvos_deployment_target
       test_spec.osx.deployment_target = osx_deployment_target

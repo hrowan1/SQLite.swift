@@ -18,17 +18,17 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SQLite",
+            name: "SQLiteCW",
             exclude: [
                 "Info.plist"
             ]
         ),
         .testTarget(
-            name: "SQLiteTests",
+            name: "SQLiteCWTests",
             dependencies: [
-                "SQLite"
+                "SQLiteCW"
             ],
-            path: "Tests/SQLiteTests",
+            path: "Tests/SQLiteCWTests",
             exclude: [
                 "Info.plist"
             ],
